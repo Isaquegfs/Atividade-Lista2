@@ -71,11 +71,11 @@ public class ListaRepeticao {
                 }
                 
                 case 4:{
+                    int horas,minutos,segundos = 0;
+                    float material, material_inicial;
                     System.out.println("Um determinado material radioativo perde metade de sua massa a cada 50 segundos. Este tempo é chamado na físico-química de MEIA-VIDA.");
                     System.out.println("Dada a massa inicial, em gramas, faça um algoritmo que determine o tempo necessário para que essa massa se torne menor que 0.5 gramas.");
                     System.out.println("Ao final do algoritmo escreva a massa inicial e o tempo calculado em horas, minutos e segundos.");
-                    int horas,minutos,segundos = 0;
-                    float material, material_inicial;
                     System.out.print("Digite a massa do material em gramas: ");
                     material_inicial = entrada.nextFloat();
                     material = material_inicial;
@@ -95,12 +95,12 @@ public class ListaRepeticao {
                 }
 
                 case 5:{
+                    int alcool = 0, gasolina = 0, diesel = 0, clientes = 0, leitor;
                     System.out.println("Um posto de combustíveis deseja determinar qual de seus produtos tem a preferência de seus clientes.");
                     System.out.println("Faça um algoritmo para ler o tipo de combustível abastecido codificado da seguinte forma:\n 1.Álcool\n 2.Gasolina\n 3.Diesel\n 4.Fim");
                     System.out.println("Caso o usuário informe um código inválido (fora da faixa de 1 a 4) deve ser solicitado um novo código (até que seja válido)");
                     System.out.println("Ao ser informado o código do combustível, o seu respectivo nome deve ser impresso na tela.");
                     System.out.println("O programa será encerrado quando o código informado for o número 4 escrevendo então a mensagem : 'MUITO OBRIGADO' e a quantidade de clientes que abasteceram cada tipo de combustível");
-                    int alcool = 0, gasolina = 0, diesel = 0, clientes = 0, leitor;
                     while (true){
                         System.out.print("Digite o combustível abastecido: ");
                         leitor = entrada.nextInt();
@@ -129,8 +129,30 @@ public class ListaRepeticao {
                     System.out.println("Diesel = " + diesel);
                     break;
                 }   
-                
-                case 6:{}
+
+                case 6:{
+                    int inteiro = -1, media = 0, contador = 0, contador_par = 0;
+                    System.out.println("Faça um programa que solicita ao usuário uma quantidade indeterminada de números inteiros.");
+                    System.out.println("O programa deve calcular e escrever a média aritmética apenas dos números pares.");
+                    System.out.println("A entrada de dados deve ser encerrada quando o número ZERO for digitado. ");
+                    while (true){
+                        System.out.print("Digite um numero inteiro: ");
+                        inteiro = entrada.nextInt();
+                        if (inteiro == 0){
+                            break;
+                        }
+                        if (inteiro % 2 == 0){
+                            media = media + inteiro;
+                            contador_par = contador_par + 1;
+                        }
+                        contador = contador + 1;
+                    }
+                    System.out.println("Quantidade de entradas: " + contador);
+                    System.out.println("Media Aritimética: " + media / contador_par);
+                    break;   
+                }
+
+
                 case 7:{}
                 case 8:{}
                 case 9:{}
@@ -143,7 +165,8 @@ public class ListaRepeticao {
             
             // Chave switch
             }
-        
+            System.out.print("Digite 1 para repetir ou 0 para encerrar: ");
+            encerrar = entrada.nextInt();
         // Chave da repetição do aplicativo
         }
 
