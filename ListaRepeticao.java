@@ -1,3 +1,4 @@
+package ListaRepeticao;
 import java.util.Scanner;
 
 public class ListaRepeticao {
@@ -153,7 +154,12 @@ public class ListaRepeticao {
                 }
 
 
-                case 7:{}
+                case 7:{
+                    System.out.println("Dado um número N inteiro  qualquer digitado pelo usuário, verificar se ele é ou não primo.");
+                }
+
+
+
                 case 8:{}
                 case 9:{}
                 case 10:{}
