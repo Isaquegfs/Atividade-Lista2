@@ -155,12 +155,40 @@ public class ListaRepeticao {
 
 
                 case 7:{
-                    System.out.println("Dado um número N inteiro  qualquer digitado pelo usuário, verificar se ele é ou não primo.");
+                    int numero, validador = 1;
+                    double primo;
+                    System.out.println("Dado um número N inteiro qualquer digitado pelo usuário, verificar se ele é ou não primo.");
+                    System.out.print("Digite o numero: ");
+                    numero = entrada.nextInt();
+                    for (int i = 2; i < numero; i++){
+                        primo = numero % i;
+                        if (primo == 0){
+                            System.out.println("Esse numero NÃO é primo!");
+                            validador = 0;
+                            break;
+                        } 
+                    }
+                    if (validador == 1){
+                        System.out.println(numero + " É primo!");
+                    }
+                    break;
+                }
+
+                case 8:{
+                    int numero, soma = 0;
+                    System.out.println("Implemente um algoritmo que leia um número e realize a soma dos números entre zero e o número lido.");
+                    System.out.println("OBS:: utilize um acumulador para a soma e o contador para a quantidade de repetições do comando.");
+                    System.out.print("Digite um numero: ");
+                    numero = entrada.nextInt();
+                    for (int i = 0; i <= numero; i++){
+                        soma = soma + i;
+                    }
+                    System.out.println("A soma dos numeros é: " + soma);
+                    System.out.println("A quantidade de vezes que o comando foi executado: " + (numero + 1) );
+                    break;
                 }
 
 
-
-                case 8:{}
                 case 9:{}
                 case 10:{}
                 case 11:{}
