@@ -319,27 +319,12 @@ public class ListaRepeticao {
                     System.out.println("A pessoa com menos salario é um(a) " + sexo_menor_salario + " e tem " + idade_menor_salario + " anos.");
                     break;
                 }
-
-
-
-            
             // Chave switch
             }
             System.out.print("Digite 1 para repetir ou 0 para encerrar: ");
             encerrar = entrada.nextInt();
         // Chave da repetição do aplicativo
         }
-
-
-
-
-
-
-
-
-
-
-
         entrada.close();
     // Chave static void
     }
