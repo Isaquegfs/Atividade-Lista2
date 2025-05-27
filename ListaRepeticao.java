@@ -245,8 +245,79 @@ public class ListaRepeticao {
                 }
 
                 case 12:{
+                    int idade = 0, maior_idade_grupo = 0, menor_idade_grupo = 100, idade_menor_salario = 0, mulheres = 0, homens = 0, indefinido = 0, contador = 0;
+                    double salario, media_salario = 0, menor_salario = Double.POSITIVE_INFINITY;
+                    String sexo, sexo_menor_salario = null;
+                    System.out.println("Para a realização de uma pesquisa entre os habitantes de uma região, faça um algoritmo que receba os dados da população correspondentes à idade, sexo (M/F/I) e salário.");
+                    System.out.println("Faça um programa que calcule e mostre:");
+                    System.out.println("• A média dos salários do grupo; \n"+
+                                        "• A maior e a menor idade do grupo; \n"+
+                                        "• A quantidade de mulheres na região; \n"+
+                                        "• A idade e o sexo da pessoa que possui o menor salário;");
+                    System.out.println("Finalize o programa quando for digitado uma idade negativa.");
+                    while (true){
+                        // IDADE
+                        while (true){
+                            System.out.print("Digite a idade: ");
+                            idade = entrada.nextInt();
+                            if (idade > 100){
+                                System.out.println("Idade invalida, digite um valor mais realista");
+                            }
+                            else {
+                                break;
+                            }
+                        }
+                        if (idade < 0){
+                            break;
+                        }
 
-                    
+                        if (idade > maior_idade_grupo){
+                            maior_idade_grupo = idade;
+                        }
+                        if (idade < menor_idade_grupo){
+                            menor_idade_grupo = idade;
+                        }
+                        entrada.nextLine(); // limpa o buffer
+                        // SEXO
+                        System.out.print("Digite o sexo (M / F / I): ");
+                        sexo = entrada.nextLine().trim().toUpperCase();
+                        if (sexo.equals("M")) {
+                            homens = homens + 1;
+                        }
+                        else if (sexo.equals("F")) {
+                            mulheres = mulheres + 1;
+                        }
+                        else if (sexo.equals("I")){
+                            indefinido = indefinido + 1;
+                        }
+
+                        // SALARIO
+                        System.out.print("Digite o salário: R$ ");
+                        salario = entrada.nextDouble();
+                        if (salario < menor_salario){
+                            menor_salario = salario;
+                            idade_menor_salario = idade;
+                            sexo_menor_salario = sexo;
+                            if (sexo_menor_salario.equals("M")){
+                                sexo_menor_salario = "Homem";
+                            }
+                            else if (sexo_menor_salario.equals("F")){
+                                sexo_menor_salario = "Mulher";
+                            }
+                            else {
+                                sexo_menor_salario = "Indefinido";
+                            }
+                        }
+                        media_salario += salario;
+                        contador++;
+                    }
+                    media_salario = media_salario / contador;
+
+                    System.out.println("A media de salarios do grupo é: R$" + media_salario);
+                    System.out.println("A maior idade do grupo é " + maior_idade_grupo + " e a menor idade é " + menor_idade_grupo);
+                    System.out.println("A quantidade de mulheres é " + mulheres + " a quantidade de homens é " + homens + " e indefinidos é " + indefinido);
+                    System.out.println("A pessoa com menos salario é um(a) " + sexo_menor_salario + " e tem " + idade_menor_salario + " anos.");
+                    break;
                 }
 
 
