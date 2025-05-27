@@ -40,7 +40,8 @@ public class ListaRepeticao {
                     break;
                 }
             }
-
+            entrada.nextLine(); // limpa o buffer
+            
             // Atividade Selecionada
             System.out.println("Exercício " + selecionarQuestao + " selecionado");
             System.out.println("Enunciado: ");
@@ -188,9 +189,45 @@ public class ListaRepeticao {
                     break;
                 }
 
+                case 9:{
+                    int numero;
+                    System.out.println("Faça um programa que leia um número N e imprima os valores entre 2 e N que são divisores de N");
+                    System.out.print("Digite um numero: ");
+                    numero = entrada.nextInt();
+                    for (int i = 2; i < numero; i++){
+                        if (numero % i == 0){
+                            System.out.println("O numero: "+ i + " é divisivel");
+                        }
+                    }
+                    System.out.println("Fim");
+                    break;
+                }
 
-                case 9:{}
-                case 10:{}
+                case 10:{
+                    int numero;
+                    String bit1, bit2, bit3;
+                    System.out.println("Faça um programa que solicita ao usuário para pensar um número de 1 até 8.");
+                    System.out.println("Seu número está nesta lista? 1, 3, 5, 7");
+                    bit1 = entrada.nextLine();
+
+                    System.out.println("Seu número está nesta lista? 2, 3, 6, 7");
+                    bit2 = entrada.nextLine();
+
+                    System.out.println("Seu número está nesta lista? 4, 5, 6, 7");
+                    bit3 = entrada.nextLine();
+                    
+                    int b1 = bit1.equalsIgnoreCase("sim") ? 1 : 0;
+                    int b2 = bit2.equalsIgnoreCase("sim") ? 1 : 0;
+                    int b3 = bit3.equalsIgnoreCase("sim") ? 1 : 0;
+
+                    numero = (b3 << 2) + (b2 << 1) + b1;
+                    if (numero == 0) {
+                        numero = 8;
+                    }
+                    System.out.println("O número que você pensou foi: " + numero + "!");
+
+                }
+
                 case 11:{}
                 case 12:{}
 
