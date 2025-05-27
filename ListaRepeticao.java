@@ -41,7 +41,7 @@ public class ListaRepeticao {
                 }
             }
             entrada.nextLine(); // limpa o buffer
-            
+
             // Atividade Selecionada
             System.out.println("Exercício " + selecionarQuestao + " selecionado");
             System.out.println("Enunciado: ");
@@ -225,11 +225,29 @@ public class ListaRepeticao {
                         numero = 8;
                     }
                     System.out.println("O número que você pensou foi: " + numero + "!");
-
+                    break;
                 }
 
-                case 11:{}
-                case 12:{}
+                case 11:{
+                    double bruzundangas, milanos;
+                    int anos;
+                    bruzundangas = 90000000;
+                    milanos = 200000000;
+                    anos = 0;
+                    System.out.println("População da República Democrática dos Bruzundangas");
+                    while (bruzundangas <= milanos) {
+                        anos = anos + 1;
+                        bruzundangas = bruzundangas + (bruzundangas * 0.03);
+                        milanos = milanos + (milanos * 0.015);
+                    }
+                    System.out.println("Demorou " + anos + " anos para Bruzundangas ultrapassar Milanos.");
+                    break;
+                }
+
+                case 12:{
+
+                    
+                }
 
 
 
